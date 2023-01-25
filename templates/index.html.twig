@@ -1,0 +1,23 @@
+{%  extends "base.html.twig" %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('add') }}
+{% endblock %}
+
+{% block body %}
+    <button class="add-btn"><a href="{{ path('app_student_add') }}">Add a new student</a></button>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="card-grid">
+    {% for student in students %}
+        {{ component('student', {student:student}) }}
+    {% endfor %}
+    </div>
+
+{% endblock %}

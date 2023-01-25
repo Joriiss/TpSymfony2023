@@ -1,0 +1,11 @@
+{%  extends "base.html.twig" %}
+
+{%  block body %}
+    <h1>Update student</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.lastname) }}
+        <button type="submit">Update</button>
+    {{ form_end(form) }}
+{%  endblock %}
